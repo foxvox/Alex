@@ -1,14 +1,22 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Alex\\",
+  "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\Alex\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2DDB9DDE-FA77-4884-B601-21879CA0DF75}|SingletonPattern\\SingletonPattern.vcxproj|C:\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Alex\\SingletonPattern\\SingletonPattern.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{2DDB9DDE-FA77-4884-B601-21879CA0DF75}|SingletonPattern\\SingletonPattern.vcxproj|solutionrelative:SingletonPattern\\SingletonPattern.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{ACC333D5-856C-4AAA-A963-C86DD4AFD32C}|AyCpp\\AyCpp.vcxproj|C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\AyCpp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ACC333D5-856C-4AAA-A963-C86DD4AFD32C}|AyCpp\\AyCpp.vcxproj|solutionrelative:AyCpp\\AyCpp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{ACC333D5-856C-4AAA-A963-C86DD4AFD32C}|AyCpp\\AyCpp.vcxproj|C:\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Alex\\AyCpp\\AyCpp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{ACC333D5-856C-4AAA-A963-C86DD4AFD32C}|AyCpp\\AyCpp.vcxproj|solutionrelative:AyCpp\\AyCpp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{C76A8FFC-097C-4D67-8AF7-0CC902DE920D}|Class3th (Constructor \u0026 Destructor)\\Class3th (Constructor \u0026 Destructor).vcxproj|C:\\Users\\Administrator\\Desktop\\Alex\\Class3th (Constructor \u0026 Destructor)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{C76A8FFC-097C-4D67-8AF7-0CC902DE920D}|Class3th (Constructor \u0026 Destructor)\\Class3th (Constructor \u0026 Destructor).vcxproj|solutionrelative:Class3th (Constructor \u0026 Destructor)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{48FD7B83-CFD4-452B-8906-0E89A68DC22F}|Class2th (Class)\\Class2th (Class).vcxproj|C:\\Users\\Administrator\\Desktop\\Alex\\Class2th (Class)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{48FD7B83-CFD4-452B-8906-0E89A68DC22F}|Class2th (Class)\\Class2th (Class).vcxproj|solutionrelative:Class2th (Class)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2DDB9DDE-FA77-4884-B601-21879CA0DF75}|SingletonPattern\\SingletonPattern.vcxproj|C:\\Users\\Administrator\\Desktop\\Alex\\SingletonPattern\\SingletonPattern.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{2DDB9DDE-FA77-4884-B601-21879CA0DF75}|SingletonPattern\\SingletonPattern.vcxproj|solutionrelative:SingletonPattern\\SingletonPattern.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -21,39 +29,50 @@
           "SelectedChildIndex": 3,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{74946827-37a0-11d2-a273-00c04f8ef4ff}"
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Source.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Alex\\Class3th (Constructor \u0026 Destructor)\\Source.cpp",
+              "RelativeDocumentMoniker": "Class3th (Constructor \u0026 Destructor)\\Source.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Alex\\Class3th (Constructor \u0026 Destructor)\\Source.cpp",
+              "RelativeToolTip": "Class3th (Constructor \u0026 Destructor)\\Source.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-11T06:33:35.14Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Source.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Alex\\Class2th (Class)\\Source.cpp",
+              "RelativeDocumentMoniker": "Class2th (Class)\\Source.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Alex\\Class2th (Class)\\Source.cpp",
+              "RelativeToolTip": "Class2th (Class)\\Source.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-11T04:40:04.789Z"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "SingletonPattern.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Alex\\SingletonPattern\\SingletonPattern.cpp",
+              "RelativeDocumentMoniker": "SingletonPattern\\SingletonPattern.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Alex\\SingletonPattern\\SingletonPattern.cpp",
+              "RelativeToolTip": "SingletonPattern\\SingletonPattern.cpp",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAAAEAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
+              "WhenOpened": "2025-06-11T04:09:38.965Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "SingletonPattern.cpp",
-              "DocumentMoniker": "C:\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Alex\\SingletonPattern\\SingletonPattern.cpp",
-              "RelativeDocumentMoniker": "SingletonPattern\\SingletonPattern.cpp",
-              "ToolTip": "C:\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Alex\\SingletonPattern\\SingletonPattern.cpp",
-              "RelativeToolTip": "SingletonPattern\\SingletonPattern.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAWAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-10T12:43:22.788Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "AyCpp.cpp",
-              "DocumentMoniker": "C:\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Alex\\AyCpp\\AyCpp.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\AyCpp.cpp",
               "RelativeDocumentMoniker": "AyCpp\\AyCpp.cpp",
-              "ToolTip": "C:\\OneDrive\\\uBC14\uD0D5 \uD654\uBA74\\Alex\\AyCpp\\AyCpp.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\AyCpp.cpp",
               "RelativeToolTip": "AyCpp\\AyCpp.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAhAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
               "WhenOpened": "2025-06-10T12:40:45.145Z",
               "EditorCaption": ""
