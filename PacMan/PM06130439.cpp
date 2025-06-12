@@ -32,8 +32,8 @@ public:
     {
         while (!gameOver)
         {
-            Draw();
-            Input();
+            Input(); 
+            Draw();    
 
             static int enemyMoveCounter = 0; // 적 이동 속도를 제어하기 위한 카운터
             enemyMoveCounter++;
@@ -123,9 +123,11 @@ private:
         }
     }
 
-    void SpawnEnemies() {
+    void SpawnEnemies() 
+    {
         enemies.clear();
-        for (int i = 0; i < 4; i++) {
+        for (int i = 0; i < 4; i++) 
+        {
             int ex, ey;
             do {
                 ex = rand() % COL_MAX;
@@ -192,6 +194,7 @@ private:
 
 int main() {
     Game game;
-    game.Run();
+    game.Run(); 
+    system("pause"); 
     return 0;
 }
