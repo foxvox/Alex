@@ -1,36 +1,98 @@
 ﻿#include <iostream>
+#include <fstream>  // Wide character 파일 읽기
+#include <conio.h>
+#include <vector>
+#include <windows.h> 
+#include <locale>
+#include <codecvt> 
+
+#define ROW_MAX 20
+#define COL_MAX 30
+
 using namespace std;
 
-/*
-성능 최적화 
-생성자 내부에서 대입(= ) 연산을 사용하면 기본 생성자가 먼저 호출된 후 대입 연산이 수행되므로 불필요한 작업이 발생할 수 있습니다. 
-멤버 초기화 리스트를 사용하면 직접 초기화되므로 불필요한 연산을 줄이고 성능을 최적화할 수 있습니다.
-const 및 참조 변수 초기화 가능
-const 멤버 변수와 참조 변수(&)는 초기화 리스트를 통해서만 설정할 수 있습니다.
-생성자 내부에서 값을 할당하려고 하면 컴파일 오류가 발생합니다.
-클래스 멤버(객체) 올바르게 초기화 
-클래스 내에 또 다른 객체가 포함된 경우, 초기화 리스트를 사용하면 해당 객체의 생성자를 직접 호출하여 초기화할 수 있습니다. 
-*/ 
-
-/* 
-✔ const 변수와 참조 변수는 반드시 초기화 리스트를 사용해야 함. 
-✔ 성능 최적화를 위해 초기화 리스트를 사용하면 불필요한 연산을 방지할 수 있음. 
-✔ 포함된 클래스 객체를 올바르게 초기화하는 데도 유용함. 
-*/
-
-class Example {
-private:
-    const int a;  // const 변수
-    int& ref;     // 참조 변수
+class Game {
 public:
-    // 멤버 초기화 리스트를 사용한 생성자
-    Example(int x, int& y) : a(x), ref(y) {
-        cout << "초기화 완료! a: " << a << ", ref: " << ref << endl;
+    Game() : pacmanX(5), pacmanY(5), gameOver(false) {
+        map.resize(ROW_MAX, vector<wchar_t>(COL_MAX, L' ')); // wide character로 변경
+        LoadMapFromFileW(L"mapFile.txt"); // wide character 파일 읽기
+        map[pacmanY][pacmanX] = L'P';
+        hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+    }
+
+    void Run() {
+        while (!gameOver) {
+            Draw();
+            Input();
+            Logic();
+        }
+    }
+
+private:
+    vector<vector<wchar_t>> map; // wide character 벡터 사용
+    int pacmanX, pacmanY;
+    bool gameOver;
+    HANDLE hConsole;
+
+    void LoadMapFromFileW(const wstring& filename) {
+        
+        wifstream file(filename, std::ios::binary);
+        file.imbue(locale(locale(), new codecvt_utf8<wchar_t>));
+
+        if (!file) {
+            wcerr << L"맵 파일을 찾을 수 없습니다: " << filename << endl;
+            return;
+        }
+
+        wstring line;
+        int row = 0;
+        while (getline(file, line) && row < ROW_MAX) {
+            for (int col = 0; col < min((int)line.length(), COL_MAX); col++) {
+                map[row][col] = static_cast<wchar_t>(line[col]); // 타입 변환 추가
+            }
+            row++;
+        }
+        file.close();
+    }
+
+    void Draw() {
+        COORD coord = { 0, 0 };
+        SetConsoleCursorPosition(hConsole, coord);
+
+        wstring buffer;
+        for (const auto& row : map) {
+            for (wchar_t cell : row) {
+                buffer += cell;
+                buffer += L' ';
+            }
+            buffer += L'\n';
+        }
+
+        WriteConsoleW(hConsole, buffer.c_str(), buffer.length(), NULL, NULL);
+    }
+
+    void Input() {
+        if (_kbhit()) {
+            char key = _getch();
+            map[pacmanY][pacmanX] = L' ';
+            switch (key) {
+            case 'w': pacmanY = max(0, pacmanY - 1); break;
+            case 's': pacmanY = min(ROW_MAX - 1, pacmanY + 1); break;
+            case 'a': pacmanX = max(0, pacmanX - 1); break;
+            case 'd': pacmanX = min(COL_MAX - 1, pacmanX + 1); break;
+            case 'q': gameOver = true; break;
+            }
+            map[pacmanY][pacmanX] = L'P';
+        }
+    }
+
+    void Logic() {
+        // 추가적인 게임 로직을 구현할 수 있음
     }
 };
 
 int main() {
-    int num = 20;
-    Example obj(10, num);
+    Game game;
+    game.Run();
     return 0;
 }
