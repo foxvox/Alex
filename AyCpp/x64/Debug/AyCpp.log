@@ -1,3 +1,5 @@
-﻿  AyCpp.cpp
-C:\OneDrive\바탕 화면\Alex\AyCpp\AyCpp.cpp(49,16): error C3861: 'getline': 식별자를 찾을 수 없습니다.
-C:\OneDrive\바탕 화면\Alex\AyCpp\AyCpp.cpp(71,62): warning C4267: '인수': 'size_t'에서 'DWORD'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+﻿  Bicycle.cpp
+  Boat.cpp
+  Scooter.cpp
+  코드를 생성하고 있습니다...
+  AyCpp.vcxproj -> C:\Users\Administrator\Desktop\Alex\x64\Debug\AyCpp.exe

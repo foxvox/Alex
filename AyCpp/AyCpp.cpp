@@ -1,98 +1,106 @@
-﻿#include <iostream>
-#include <fstream>  // Wide character 파일 읽기
-#include <conio.h>
-#include <vector>
-#include <windows.h> 
-#include <locale>
-#include <codecvt> 
+﻿#include <iostream> 
+#include "Vehicle.h" 
+#include "Scooter.h" 
+#include "Boat.h" 
+#include "Bicycle.h" 
 
-#define ROW_MAX 20
-#define COL_MAX 30
+using namespace std; 
 
-using namespace std;
-
-class Game {
+class Monster
+{
 public:
-    Game() : pacmanX(5), pacmanY(5), gameOver(false) {
-        map.resize(ROW_MAX, vector<wchar_t>(COL_MAX, L' ')); // wide character로 변경
-        LoadMapFromFileW(L"mapFile.txt"); // wide character 파일 읽기
-        map[pacmanY][pacmanX] = L'P';
-        hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-    }
+	Monster() : health{ 0 }, defense{ 0 }
+	{} 
+	virtual ~Monster() {} 	
+	int health;
+	int defense; 
 
-    void Run() {
-        while (!gameOver) {
-            Draw();
-            Input();
-            Logic();
-        }
-    }
+	virtual void ShowStats() const 
+	{
+		cout << "health: " << health << endl; 
+		cout << "defense: " << defense << endl; 
+	}
+};
+class Goblin : public Monster
+{
+public:
+	Goblin() : Monster(), attack{ 30 } 
+	{
+		health = 100; 
+		defense = 5; 
+	} 
+	virtual ~Goblin() {}  
 
+	virtual void ShowStats() const override 
+	{
+		cout << "Goblin" << endl; 
+		cout << "health: " << health << endl;
+		cout << "defense: " << defense << endl; 
+		cout << "attack: " << attack << endl; 
+	}
 private:
-    vector<vector<wchar_t>> map; // wide character 벡터 사용
-    int pacmanX, pacmanY;
-    bool gameOver;
-    HANDLE hConsole;
+	int attack; 
+};
+class JuniorGolem : public Monster
+{
+public:
+	JuniorGolem() : Monster(), attack{ 50 } 
+	{
+		health = 200;
+		defense = 10;
+	} 
+	virtual ~JuniorGolem() {} 
 
-    void LoadMapFromFileW(const wstring& filename) {
-        
-        wifstream file(filename, std::ios::binary);
-        file.imbue(locale(locale(), new codecvt_utf8<wchar_t>));
+	virtual void ShowStats() const override
+	{
+		cout << "JuniorGolem" << endl; 
+		cout << "health: " << health << endl;
+		cout << "defense: " << defense << endl;
+		cout << "attack: " << attack << endl;
+	}
+private:
+	int attack;
+};
+class Slime : public Monster
+{
+public:
+	Slime() : Monster()  
+	{
+		health = 50;
+		defense = 1;
+	} 
+	virtual ~Slime() {} 
 
-        if (!file) {
-            wcerr << L"맵 파일을 찾을 수 없습니다: " << filename << endl;
-            return;
-        }
-
-        wstring line;
-        int row = 0;
-        while (getline(file, line) && row < ROW_MAX) {
-            for (int col = 0; col < min((int)line.length(), COL_MAX); col++) {
-                map[row][col] = static_cast<wchar_t>(line[col]); // 타입 변환 추가
-            }
-            row++;
-        }
-        file.close();
-    }
-
-    void Draw() {
-        COORD coord = { 0, 0 };
-        SetConsoleCursorPosition(hConsole, coord);
-
-        wstring buffer;
-        for (const auto& row : map) {
-            for (wchar_t cell : row) {
-                buffer += cell;
-                buffer += L' ';
-            }
-            buffer += L'\n';
-        }
-
-        WriteConsoleW(hConsole, buffer.c_str(), buffer.length(), NULL, NULL);
-    }
-
-    void Input() {
-        if (_kbhit()) {
-            char key = _getch();
-            map[pacmanY][pacmanX] = L' ';
-            switch (key) {
-            case 'w': pacmanY = max(0, pacmanY - 1); break;
-            case 's': pacmanY = min(ROW_MAX - 1, pacmanY + 1); break;
-            case 'a': pacmanX = max(0, pacmanX - 1); break;
-            case 'd': pacmanX = min(COL_MAX - 1, pacmanX + 1); break;
-            case 'q': gameOver = true; break;
-            }
-            map[pacmanY][pacmanX] = L'P';
-        }
-    }
-
-    void Logic() {
-        // 추가적인 게임 로직을 구현할 수 있음
-    }
+	virtual void ShowStats() const override
+	{
+		cout << "Slime" << endl; 
+		cout << "health: " << health << endl;
+		cout << "defense: " << defense << endl;	
+	}
 };
 
-int main() {
-    Game game;
-    game.Run();
-    return 0;
+int main()
+{
+#pragma region 상속 
+	/*Monster* goblin = new Goblin(); 
+	Monster* juniorGolem = new JuniorGolem();
+	Monster* slime = new Slime(); 
+
+	goblin->ShowStats(); 
+	juniorGolem->ShowStats(); 
+	slime->ShowStats(); */ 
+
+	Vehicle		vehicle; 
+	Scooter		scooter; 
+	Boat		boat; 
+	Bicycle		bicycle; 
+
+	scooter.Move(); 
+	boat.Move();
+	bicycle.Move(); 
+
+	cout << "sizeof(Scooter): " << sizeof(Scooter) << endl; 
+	cout << "sizeof(Boat): " << sizeof(Boat) << endl; 
+	cout << "sizeof(Bicycle): " << sizeof(Bicycle) << endl; 
+#pragma endregion 
 }

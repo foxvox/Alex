@@ -124,6 +124,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AyCpp.cpp" />
+    <ClCompile Include="Bicycle.cpp" />
+    <ClCompile Include="Boat.cpp" />
+    <ClCompile Include="Scooter.cpp" />
+    <ClCompile Include="Vehicle.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Bicycle.h" />
+    <ClInclude Include="Boat.h" />
+    <ClInclude Include="Scooter.h" />
+    <ClInclude Include="Vehicle.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -1,5 +1,7 @@
-﻿#include <iostream>
-#include <fstream>  // Wide character 파일 읽기
+﻿/*
+#include <iostream>
+#include <fstream>  // Wide character 파일 읽기 
+#include <string> 
 #include <conio.h>
 #include <vector>
 #include <windows.h> 
@@ -15,7 +17,7 @@ class Game {
 public:
     Game() : pacmanX(5), pacmanY(5), gameOver(false) {
         map.resize(ROW_MAX, vector<wchar_t>(COL_MAX, L' ')); // wide character로 변경
-        LoadMapFromFileW(L"mapFile.txt"); // wide character 파일 읽기
+        LoadMapFromFile(L"mapFile.txt"); // wide character 파일 읽기
         map[pacmanY][pacmanX] = L'P';
         hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     }
@@ -34,7 +36,7 @@ private:
     bool gameOver;
     HANDLE hConsole;
 
-    void LoadMapFromFileW(const wstring& filename) {
+    void LoadMapFromFile(const wstring& filename) {
 
         wifstream file(filename, std::ios::binary);
         file.imbue(locale(locale(), new codecvt_utf8<wchar_t>));
@@ -96,3 +98,4 @@ int main() {
     game.Run();
     return 0;
 }
+*/
