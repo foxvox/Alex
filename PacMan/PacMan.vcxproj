@@ -125,7 +125,9 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="PacMan.cpp" />
-    <ClCompile Include="PacManEx.cpp" />
+    <ClCompile Include="PacMan0613.cpp" />
+    <ClCompile Include="PacMan06130415.cpp" />
+    <ClCompile Include="PM06130439.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
