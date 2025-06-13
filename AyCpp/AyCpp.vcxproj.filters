@@ -18,30 +18,36 @@
     <ClCompile Include="AyCpp.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Vehicle.cpp">
+    <ClCompile Include="Consumable.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Scooter.cpp">
+    <ClCompile Include="Potion.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Boat.cpp">
+    <ClCompile Include="Lantern.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
-    <ClCompile Include="Bicycle.cpp">
+    <ClCompile Include="Antidote.cpp">
+      <Filter>소스 파일</Filter>
+    </ClCompile>
+    <ClCompile Include="Bandage.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Vehicle.h">
+    <ClInclude Include="Consumable.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Scooter.h">
+    <ClInclude Include="Potion.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Boat.h">
+    <ClInclude Include="Lantern.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
-    <ClInclude Include="Bicycle.h">
+    <ClInclude Include="Antidote.h">
+      <Filter>헤더 파일</Filter>
+    </ClInclude>
+    <ClInclude Include="Bandage.h">
       <Filter>헤더 파일</Filter>
     </ClInclude>
   </ItemGroup>

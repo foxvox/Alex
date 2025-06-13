@@ -1,9 +1,10 @@
+/* 
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <conio.h>
 #include <vector>
-#include <windows.h>
+#include <windows.h> 
 
 constexpr auto ROW_MAX = 20;
 constexpr auto COL_MAX = 30;
@@ -38,7 +39,7 @@ public:
             static int enemyMoveCounter = 0; // 적 이동 속도를 제어하기 위한 카운터
             enemyMoveCounter++;
 
-            if (enemyMoveCounter % 5 == 0) // 적을 특정 프레임마다 움직이게 조절 (값을 키우면 더 느려짐)
+            if (enemyMoveCounter % 7 == 0) // 적을 특정 프레임마다 움직이게 조절 (값을 키우면 더 느려짐)
             {
                 MoveEnemies();
                 CheckCollision();
@@ -198,3 +199,4 @@ int main() {
     system("pause"); 
     return 0;
 }
+*/ 

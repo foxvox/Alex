@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\AyCpp\AyCpp.cpp" />
     <ClCompile Include="..\AyCpp\Bicycle.cpp" />
     <ClCompile Include="..\AyCpp\Boat.cpp" />
     <ClCompile Include="..\AyCpp\Scooter.cpp" />
     <ClCompile Include="..\AyCpp\Vehicle.cpp" />
+    <ClCompile Include="Source.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\AyCpp\Bicycle.h" />

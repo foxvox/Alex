@@ -1,106 +1,69 @@
 ﻿#include <iostream> 
-#include "Vehicle.h" 
-#include "Scooter.h" 
-#include "Boat.h" 
-#include "Bicycle.h" 
+#include <iomanip> 
+#include "Consumable.h" 
+#include "Potion.h" 
+#include "Lantern.h" 
+#include "Bandage.h" 
+#include "Antidote.h" 
 
 using namespace std; 
 
-class Monster
+static int Square(int x)
 {
-public:
-	Monster() : health{ 0 }, defense{ 0 }
-	{} 
-	virtual ~Monster() {} 	
-	int health;
-	int defense; 
-
-	virtual void ShowStats() const 
-	{
-		cout << "health: " << health << endl; 
-		cout << "defense: " << defense << endl; 
-	}
-};
-class Goblin : public Monster
+	return x * x; 
+}
+static double Square(double x)
 {
-public:
-	Goblin() : Monster(), attack{ 30 } 
-	{
-		health = 100; 
-		defense = 5; 
-	} 
-	virtual ~Goblin() {}  
+	return x * x; 
+} 
 
-	virtual void ShowStats() const override 
-	{
-		cout << "Goblin" << endl; 
-		cout << "health: " << health << endl;
-		cout << "defense: " << defense << endl; 
-		cout << "attack: " << attack << endl; 
-	}
-private:
-	int attack; 
-};
-class JuniorGolem : public Monster
+typedef enum 
 {
-public:
-	JuniorGolem() : Monster(), attack{ 50 } 
-	{
-		health = 200;
-		defense = 10;
-	} 
-	virtual ~JuniorGolem() {} 
-
-	virtual void ShowStats() const override
-	{
-		cout << "JuniorGolem" << endl; 
-		cout << "health: " << health << endl;
-		cout << "defense: " << defense << endl;
-		cout << "attack: " << attack << endl;
-	}
-private:
-	int attack;
-};
-class Slime : public Monster
-{
-public:
-	Slime() : Monster()  
-	{
-		health = 50;
-		defense = 1;
-	} 
-	virtual ~Slime() {} 
-
-	virtual void ShowStats() const override
-	{
-		cout << "Slime" << endl; 
-		cout << "health: " << health << endl;
-		cout << "defense: " << defense << endl;	
-	}
-};
+	potion = 1, lantern, antidote, bandage 
+} Con;
 
 int main()
 {
-#pragma region 상속 
-	/*Monster* goblin = new Goblin(); 
-	Monster* juniorGolem = new JuniorGolem();
-	Monster* slime = new Slime(); 
+#pragma region 다형성 
+#pragma region 함수오버로딩 	
+	/*cout << Square(5) << endl; 
+	cout << fixed << setprecision(2) << Square(3.0) << endl;*/
+#pragma endregion 
+#pragma region 함수오버라이딩 
+	Consumable* pCon; 
+	int num = 0;
+	for (int i = 0; i < 5; i++)
+	{		
+		cout << "1. Potion    2.Lantern    3.Antidote    4.Bandage" << endl; 
+		cin >> num; 		
 
-	goblin->ShowStats(); 
-	juniorGolem->ShowStats(); 
-	slime->ShowStats(); */ 
-
-	Vehicle		vehicle; 
-	Scooter		scooter; 
-	Boat		boat; 
-	Bicycle		bicycle; 
-
-	scooter.Move(); 
-	boat.Move();
-	bicycle.Move(); 
-
-	cout << "sizeof(Scooter): " << sizeof(Scooter) << endl; 
-	cout << "sizeof(Boat): " << sizeof(Boat) << endl; 
-	cout << "sizeof(Bicycle): " << sizeof(Bicycle) << endl; 
+		switch (Con(num)) 
+		{
+		case potion:
+			pCon = new Potion; 
+			pCon->Use(); 
+			delete pCon; 
+			break; 
+		case lantern:
+			pCon = new Lantern;
+			pCon->Use();
+			delete pCon;
+			break; 
+		case antidote:
+			pCon = new Antidote;
+			pCon->Use(); 
+			delete pCon; 
+			break; 
+		case bandage: 
+			pCon = new Bandage;
+			pCon->Use();
+			delete pCon;
+			break; 
+		default:
+			cout << "잘못입력했습니다." << endl; 
+			break;
+		}
+	}
+#pragma endregion 
 #pragma endregion 
 }

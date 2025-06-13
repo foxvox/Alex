@@ -123,17 +123,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Antidote.cpp" />
     <ClCompile Include="AyCpp.cpp" />
-    <ClCompile Include="Bicycle.cpp" />
-    <ClCompile Include="Boat.cpp" />
-    <ClCompile Include="Scooter.cpp" />
-    <ClCompile Include="Vehicle.cpp" />
+    <ClCompile Include="Bandage.cpp" />
+    <ClCompile Include="Consumable.cpp" />
+    <ClCompile Include="Lantern.cpp" />
+    <ClCompile Include="Potion.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Bicycle.h" />
-    <ClInclude Include="Boat.h" />
-    <ClInclude Include="Scooter.h" />
-    <ClInclude Include="Vehicle.h" />
+    <ClInclude Include="Antidote.h" />
+    <ClInclude Include="Bandage.h" />
+    <ClInclude Include="Consumable.h" />
+    <ClInclude Include="Lantern.h" />
+    <ClInclude Include="Potion.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
