@@ -1,32 +1,42 @@
+Ôªø/* 
 #include <iostream>
 #include <fstream>
 #include <string>
 #include <conio.h>
 #include <vector>
-#include <windows.h>
+#include <windows.h> 
+#include <climits> 
+#include <cstdlib> 
+#include <ctime> 
 
-constexpr auto ROW_MAX = 20;
-constexpr auto COL_MAX = 30;
+constexpr auto ROW_MAX = 14;
+constexpr auto COL_MAX = 40; 
+constexpr auto ENEMY_CNT = 5; 
 
 using namespace std;
 
-struct Enemy
+class Enemy
 {
-    int x, y;
-};
-
-vector<Enemy> enemies; // ¿˚ ∏ÆΩ∫∆Æ 
+public:    
+    int x; 
+    int y; 
+    char prevChar;
+    bool wasFood; 
+}; 
 
 class Game
 {
 public:
-    Game() : pacmanX(15), pacmanY(10), gameOver(false), score(0)
+    static int enemyMoveCnt; 
+    static int invincibleCnt; 
+public:
+    Game() : pacmanX{ 20 }, pacmanY{ 7 }, gameOver{ false }, score{ 0 }   
     {
         map.resize(ROW_MAX, vector<char>(COL_MAX, ' '));
         LoadMapFromFile("mapFile.txt");
         map[pacmanY][pacmanX] = '@';
         hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
-        SpawnEnemies(); // ¿˚ ª˝º∫
+        SpawnEnemies(); // Ï†Å ÏÉùÏÑ± 
     }
 
     void Run()
@@ -36,17 +46,19 @@ public:
             Input();
             Draw();
 
-            static int enemyMoveCounter = 0; // ¿˚ ¿Ãµø º”µµ∏¶ ¡¶æÓ«œ±‚ ¿ß«— ƒ´øÓ≈Õ
-            enemyMoveCounter++;
+            if (enemyMoveCnt < INT_MAX)
+                enemyMoveCnt++;
+            else
+                enemyMoveCnt = 0; 
 
-            if (enemyMoveCounter % 5 == 0) // ¿˚¿ª ∆Ø¡§ «¡∑π¿”∏∂¥Ÿ øÚ¡˜¿Ã∞‘ ¡∂¿˝ (∞™¿ª ≈∞øÏ∏È ¥ı ¥¿∑¡¡¸)
+            if (enemyMoveCnt % 4 == 0) // Ï†Å ÌäπÏ†ï ÌîÑÎ†àÏûÑÎßàÎã§ ÎèôÏûë  
             {
                 MoveEnemies();
-                CheckCollision();
+                CheckCollision(); 
             }
 
-            Logic();
-            Sleep(20); // ∞‘¿” ∑Á«¡ ¿⁄√º∏¶ æ‡∞£ ¡ˆø¨«œø© ¿¸√º º”µµ∏¶ ¡¶æÓ
+            RenderUx();
+            Sleep(100); // Í≤åÏûÑ Î£®ÌîÑ ÏûêÏ≤¥Î•º ÏßÄÏó∞ÌïòÏó¨ Ï†ÑÏ≤¥ ÏÜçÎèÑ Ï†úÏñ¥
         }
     }
 
@@ -63,7 +75,7 @@ private:
         ifstream file(filename);
         if (!file) 
         {
-            cerr << "∏  ∆ƒ¿œ¿ª √£¿ª ºˆ æ¯Ω¿¥œ¥Ÿ: " << filename << endl;
+            cerr << "Îßµ ÌååÏùºÏùÑ Ï∞æÏùÑ Ïàò ÏóÜÏäµÎãàÎã§: " << filename << endl;
             return;
         }
 
@@ -71,6 +83,8 @@ private:
         int row = 0;
         while (getline(file, line) && row < ROW_MAX) 
         {
+            // Îßµ ÏûëÏÑ±Ìï† Îïå COL_MAXÎ≥¥Îã§ ÏûëÍ≤å ÏûëÏÑ±Ìï† ÏàòÎèÑ ÏûàÏñ¥ÏÑú 
+            // min((int)line.length(), COL_MAX)Î°ú ÏûëÏÑ± 
             for (int col = 0; col < min((int)line.length(), COL_MAX); col++) 
             {
                 map[row][col] = line[col];
@@ -78,25 +92,31 @@ private:
             row++;
         }
         file.close();
-    }
-
+    } 
+    
     void Draw()
     {
         COORD cursorPosition = { 0, 0 };
         SetConsoleCursorPosition(hConsole, cursorPosition);
 
-        string buffer;
-        for (const auto& row : map)
+        for (int row = 0; row < ROW_MAX; row++)
         {
-            for (char cell : row)
+            for (int col = 0; col < COL_MAX; col++)
             {
-                buffer += cell;
+                switch (map[row][col])
+                {
+                case '@': SetConsoleTextAttribute(hConsole, 10); break; // Ïó∞ÎëêÏÉâ
+                case 'M': SetConsoleTextAttribute(hConsole, 13); break; // ÎßàÏ††ÌÉÄ
+                case 'o': SetConsoleTextAttribute(hConsole, 14); break; // ÎÖ∏ÎûÄÏÉâ
+                default:  SetConsoleTextAttribute(hConsole, 7);  break; // Í∏∞Î≥∏ Ìù∞ÏÉâ
+                }
+                cout << map[row][col];
             }
-            buffer += '\n';
+            cout << endl;
         }
 
-        DWORD charsWritten;
-        WriteConsoleA(hConsole, buffer.c_str(), buffer.length(), &charsWritten, NULL);
+        // ÏÉâÏÉÅÏùÑ Í∏∞Î≥∏ÏúºÎ°ú ÎêòÎèåÎ¶¨Í∏∞
+        SetConsoleTextAttribute(hConsole, 7);
     }
 
     void Input()
@@ -106,6 +126,8 @@ private:
             char key = _getch();
             int newX = pacmanX, newY = pacmanY;
 
+            // max, min Ìï®ÏàòÎ•º ÌÜµÌï¥ indexÍ∞Ä ÏßÄÏ†ïÎêú row/col ÏïàÏóêÏÑú 
+            // Îçî Îñ®Ïñ¥ÏßÄÍ±∞ÎÇò Îçî Ï¶ùÍ∞ÄÌïòÏßÄ ÏïäÍ≤å ÎßâÏïÑÎÜìÏùå
             switch (key)
             {
             case 'w': newY = max(0, pacmanY - 1); break;
@@ -115,31 +137,42 @@ private:
             case 'q': gameOver = true; return;
             }
 
-            if (map[newY][newX] == ' ' || map[newY][newX] == 'o')
+            // Ïù¥ÎèôÌïú ÏúÑÏπòÍ∞Ä Î®πÏù¥Î©¥ Ï†êÏàò Ï¶ùÍ∞Ä ÌõÑ Ïù¥Îèô Ï†ÅÏö©  
+            // ÌÜµÎ°úÎ©¥ Í∑∏ÎÉ• Ïù¥Îèô Ï†ÅÏö©    
+            if (map[newY][newX] != '#') 
             {
-                if (map[newY][newX] == 'o') score++;
+                if (map[newY][newX] == 'o') 
+                    score++;
 
-                map[pacmanY][pacmanX] = ' ';
+                // Í∏∞Ï°¥ ÏúÑÏπòÏùò @Î•º ' 'Î°ú ÎçÆÏñ¥ Ïì∞Í≥† 
+                map[pacmanY][pacmanX] = ' '; 
+                // Ïù¥ÎèôÌïú ÏúÑÏπòÎ•º ÌòÑÏû¨ Ìå©Îß® ÏúÑÏπòÎ°ú Í∞±Ïã†ÌïòÍ≥† 
                 pacmanX = newX;
                 pacmanY = newY;
+                // Í∞±Ïã†Ìïú ÏúÑÏπòÏóê @(Ìå©Îß®)ÏùÑ ÎåÄÏûÖÌïúÎã§ 
                 map[pacmanY][pacmanX] = '@';
             }
         }
+    } 
+
+    void SpawnEnemy()
+    {
+        int ex, ey;
+        do
+        {
+            ex = rand() % COL_MAX;
+            ey = rand() % ROW_MAX;
+        } while (map[ey][ex] != ' '); // ÌÜµÎ°úÍ∞Ä ÏïÑÎãàÎ©¥ Îã§Ïãú ÏÉùÏÑ±
+        enemies.push_back({ ex, ey, ' ', false }); 
+        map[ey][ex] = 'M';
     }
 
     void SpawnEnemies()
     {
         enemies.clear();
-        for (int i = 0; i < 4; i++)
+        for (int i = 0; i < ENEMY_CNT; i++)
         {
-            int ex, ey;
-            do 
-            {
-                ex = rand() % COL_MAX;
-                ey = rand() % ROW_MAX;
-            } while (map[ey][ex] != ' '); // ∫Æ¿Ã æ∆¥— ∞˜ø° πËƒ°
-            enemies.push_back({ ex, ey });
-            map[ey][ex] = 'M';
+            SpawnEnemy(); 
         }
     }
 
@@ -147,60 +180,77 @@ private:
     {
         for (auto& enemy : enemies)
         {
-            int direction = rand() % 4;
-            int newX = enemy.x, newY = enemy.y;
-
-            switch (direction)
+            int direction, newX, newY;  
+            do
             {
-            case 0: newY = max(0, enemy.y - 1); break; // ¿ß∑Œ ¿Ãµø
-            case 1: newY = min(ROW_MAX - 1, enemy.y + 1); break; // æ∆∑°∑Œ ¿Ãµø
-            case 2: newX = max(0, enemy.x - 1); break; // øﬁ¬  ¿Ãµø
-            case 3: newX = min(COL_MAX - 1, enemy.x + 1); break; // ø¿∏•¬  ¿Ãµø
-            }
+                direction = rand() % 4;
+                newX = enemy.x;
+                newY = enemy.y;
 
-            // ∫Æ(`#`)¿Ã æ∆¥œ∞Ì ¿Ãµø«“ ¿ßƒ°∞° ¿˚¿Ã æ∆¥“ ∂ß∏∏ ¿Ãµø
-            if (map[newY][newX] != '#' && map[newY][newX] != 'M')
-            {
-                char previousChar = map[newY][newX]; // ¿Ãµø«“ ¿ßƒ°¿« ±‚¡∏ πÆ¿⁄ ¿˙¿Â
-
-                // ¿Ã¿¸ ¿ßƒ° ∫π±∏ (`o`∞° ¿÷¿∏∏È ¿Ø¡ˆ)
-                if (map[enemy.y][enemy.x] == 'M')
+                switch (direction)
                 {
-                    map[enemy.y][enemy.x] = (previousChar == 'o') ? 'o' : ' ';
+                case 0: newY = max(0, enemy.y - 1); break; // ÏúÑÎ°ú Ïù¥Îèô
+                case 1: newY = min(ROW_MAX - 1, enemy.y + 1); break; // ÏïÑÎûòÎ°ú Ïù¥Îèô
+                case 2: newX = max(0, enemy.x - 1); break; // ÏôºÏ™Ω Ïù¥Îèô
+                case 3: newX = min(COL_MAX - 1, enemy.x + 1); break; // Ïò§Î•∏Ï™Ω Ïù¥Îèô
                 }
+                
+            } while (map[newY][newX] == '#'); // ÏÉà ÏúÑÏπòÍ∞Ä Î≤ΩÏù¥Î©¥ Ïù¥ÎèôÌï† ÏúÑÏπò Îã§Ïãú ÏÑ§Ï†ï 
 
-                enemy.x = newX;
-                enemy.y = newY;
-                map[newY][newX] = 'M'; // ªı∑ŒøÓ ¿ßƒ°ø° `e` πËƒ°
-            }
+            enemy.prevChar = map[newY][newX]; // Ïù¥ÎèôÌï† ÏúÑÏπòÏùò Í∏∞Ï°¥ Î¨∏Ïûê Ï†ÄÏû• 
+                                
+            map[newY][newX] = 'M'; // ÏÉàÎ°úÏö¥ ÏúÑÏπòÏóê `M` Î∞∞Ïπò 
+            
+            // Ïù¥Ï†Ñ ÌîÑÎ†àÏûÑ Îïå oÏùÑ MÏù¥ ÎçÆÏñ¥ Ïì¥ Í≤ΩÏö∞ 
+            if (enemy.wasFood == true)  
+                map[enemy.y][enemy.x] = 'o'; 
+            else 
+                map[enemy.y][enemy.x] = ' '; 
+            
+            // ÏóêÎÑàÎØ∏ ÏúÑÏπòÎ•º Í∞±Ïã†ÌïúÎã§ 
+            enemy.x = newX;
+            enemy.y = newY;
+            
+            if (enemy.prevChar == 'o') 
+                enemy.wasFood = true;
+            else
+                enemy.wasFood = false; 
         }
     }
 
-    void CheckCollision() {
-        for (const auto& enemy : enemies) {
-            if (enemy.x == pacmanX && enemy.y == pacmanY) {
+    void CheckCollision() 
+    {
+        for (const auto& enemy : enemies) 
+        {
+            if (enemy.x == pacmanX && enemy.y == pacmanY) 
+            {
                 gameOver = true;
             }
         }
     }
 
-    void Logic()
+    void RenderUx() const
     {
-        COORD scorePosition = { 0, ROW_MAX };
+        COORD scorePosition = { 0, ROW_MAX + 1 }; 
         SetConsoleCursorPosition(hConsole, scorePosition);
-        cout << "Score: " << score;
+        cout << "Score: " << score << endl;  
         if (gameOver)
         {
-            cout << " [ Game Over! ]";
+            cout << "[ Game Over! ]";
         }
         cout << endl;
     }
-};
+}; 
+
+int Game::enemyMoveCnt = 0;
+int Game::invincibleCnt = 0;
 
 int main()
 {
+    srand(time(nullptr));
     Game game;
     game.Run();
     system("pause");
     return 0;
 }
+*/
