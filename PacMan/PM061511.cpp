@@ -3,14 +3,15 @@
 #include <string>
 #include <conio.h>
 #include <vector>
-#include <windows.h> 
+#include <windows.h>
 
 constexpr auto ROW_MAX = 20;
 constexpr auto COL_MAX = 30;
 
 using namespace std;
 
-struct Enemy {
+struct Enemy
+{
     int x, y;
 };
 
@@ -38,14 +39,14 @@ public:
             static int enemyMoveCounter = 0; // 적 이동 속도를 제어하기 위한 카운터
             enemyMoveCounter++;
 
-            if (enemyMoveCounter % 7 == 0) // 적을 특정 프레임마다 움직이게 조절 (값을 키우면 더 느려짐)
+            if (enemyMoveCounter % 5 == 0) // 적을 특정 프레임마다 움직이게 조절 (값을 키우면 더 느려짐)
             {
                 MoveEnemies();
                 CheckCollision();
             }
 
             Logic();
-            Sleep(50); // 게임 루프 자체를 약간 지연하여 전체 속도를 제어
+            Sleep(20); // 게임 루프 자체를 약간 지연하여 전체 속도를 제어
         }
     }
 
@@ -132,12 +133,13 @@ private:
         for (int i = 0; i < 4; i++)
         {
             int ex, ey;
-            do {
+            do 
+            {
                 ex = rand() % COL_MAX;
                 ey = rand() % ROW_MAX;
             } while (map[ey][ex] != ' '); // 벽이 아닌 곳에 배치
             enemies.push_back({ ex, ey });
-            map[ey][ex] = 'E';
+            map[ey][ex] = 'M';
         }
     }
 
@@ -157,29 +159,26 @@ private:
             }
 
             // 벽(`#`)이 아니고 이동할 위치가 적이 아닐 때만 이동
-            if (map[newY][newX] != '#' && map[newY][newX] != 'E')
+            if (map[newY][newX] != '#' && map[newY][newX] != 'M')
             {
                 char previousChar = map[newY][newX]; // 이동할 위치의 기존 문자 저장
 
                 // 이전 위치 복구 (`o`가 있으면 유지)
-                if (map[enemy.y][enemy.x] == 'E')
+                if (map[enemy.y][enemy.x] == 'M')
                 {
                     map[enemy.y][enemy.x] = (previousChar == 'o') ? 'o' : ' ';
                 }
 
                 enemy.x = newX;
                 enemy.y = newY;
-                map[newY][newX] = 'E'; // 새로운 위치에 `E` 배치
+                map[newY][newX] = 'M'; // 새로운 위치에 `e` 배치
             }
         }
     }
 
-    void CheckCollision() 
-    {
-        for (const auto& enemy : enemies) 
-        {
-            if (enemy.x == pacmanX && enemy.y == pacmanY) 
-            {
+    void CheckCollision() {
+        for (const auto& enemy : enemies) {
+            if (enemy.x == pacmanX && enemy.y == pacmanY) {
                 gameOver = true;
             }
         }
@@ -192,13 +191,13 @@ private:
         cout << "Score: " << score;
         if (gameOver)
         {
-            cout << " - Game Over!";
+            cout << " [ Game Over! ]";
         }
         cout << endl;
     }
 };
 
-int main() 
+int main()
 {
     Game game;
     game.Run();
