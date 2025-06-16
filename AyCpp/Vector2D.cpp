@@ -1,37 +1,28 @@
 #include "Vector2D.h"
 
-Vector2D::Vector2D() 
-	: x{}, y{} 
-{}
-
-Vector2D::Vector2D(const float& _x, const float& _y)
+const Vector2D& Vector2D::operator+=(const Vector2D& rhs)
 {
-	x = _x; 
-	y = _y; 
+    x += rhs.x;
+    y += rhs.y;
+    return *this;
+} 
+
+const Vector2D& Vector2D::operator-=(const Vector2D& rhs)
+{
+    x -= rhs.x;
+    y -= rhs.y;
+    return *this;
 }
 
-Vector2D::~Vector2D() 
-{}
-
-const Vector2D& Vector2D::operator+(const Vector2D& rhs)
+const Vector2D Vector2D::operator+(const Vector2D& rhs) const 
 {
 	return Vector2D(x + rhs.x, y + rhs.y); 
 }
 
-const Vector2D& Vector2D::operator-(const Vector2D& rhs)
+const Vector2D Vector2D::operator-(const Vector2D& rhs) const 
 {
 	return Vector2D(x - rhs.x, y - rhs.y); 
 }
-
-const Vector2D& Vector2D::operator*(const Vector2D& rhs)
-{
-	return Vector2D(x * rhs.x, y * rhs.y); 
-}
-
-const Vector2D& Vector2D::operator/(const Vector2D& rhs)
-{
-	return Vector2D(x / rhs.x, y / rhs.y); 
-} 
 
 // ++ 전위연산자 
 const Vector2D& Vector2D::operator++() 
@@ -41,26 +32,28 @@ const Vector2D& Vector2D::operator++()
     return *this;
 }
 
-// ++후위연산자 
-const Vector2D& Vector2D::operator++(int) 
+// ++ 후위연산자 
+const Vector2D Vector2D::operator++(int) 
 {
     Vector2D temp = *this; 
     x++;
     y++;
     return temp; 
-}
+} 
 
-const Vector2D& Vector2D::operator=(const Vector2D& rhs) 
+// -- 전위연산자 
+const Vector2D& Vector2D::operator--() 
 {
-    if (this != &rhs) 
-    {
-        x = rhs.x;
-        y = rhs.y;
-    }
+    x--;
+    y--;
     return *this;
 }
 
-void Vector2D::Print() const
+// -- 후위연산자 
+const Vector2D Vector2D::operator--(int)
 {
-    std::cout << "(" << x << ", " << y << ")" << std::endl;
+    Vector2D temp = *this;
+    x--;
+    y--;
+    return temp;
 }

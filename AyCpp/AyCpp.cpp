@@ -24,19 +24,22 @@ int main()
 	delete pencil; */
 #pragma endregion 
 #pragma region 연산자오버로딩 
-	Vector2D vec1(2, 3), vec2(5, 6), vec3(0, 0);
+	Vector2D vec1(2, 3), vec2(5, 6), vec3(0, 0);	
 	vec3 = vec1 + vec2; 
-	vec3.Print(); 
-	vec3 = vec1 - vec2;
-	vec3.Print();
-	vec3 = vec1 * vec2; 
-	vec3.Print();
-	vec3 = vec1 / vec2; 
-	vec3.Print(); 
+	cout << "vec3 => " << "(" << vec3.GetX() << ", " << vec3.GetY() << ")" << endl;
+	vec3 = vec1 - vec2; 
+	cout << "vec3 => " << "(" << vec3.GetX() << ", " << vec3.GetY() << ")" << endl;	
 	vec3 = vec1++; 
-	vec3.Print(); 
-	vec1.Print(); 
-	++vec2; 
-	vec2.Print(); 
+	cout << "vec3 => " << "(" << vec3.GetX() << ", " << vec3.GetY() << ")" << endl;
+	vec3 = ++vec1;
+	cout << "vec3 => " << "(" << vec3.GetX() << ", " << vec3.GetY() << ")" << endl; 
+	vec3 += vec2; 
+	cout << "vec3 => " << "(" << vec3.GetX() << ", " << vec3.GetY() << ")" << endl; 
+	vec3 = vec2--; 
+	cout << "vec3 => " << "(" << vec3.GetX() << ", " << vec3.GetY() << ")" << endl;
+	vec3 = --vec2; 
+	cout << "vec3 => " << "(" << vec3.GetX() << ", " << vec3.GetY() << ")" << endl; 
+	vec3 -= vec2; 
+	cout << "vec3 => " << "(" << vec3.GetX() << ", " << vec3.GetY() << ")" << endl;
 #pragma endregion 	
 }
