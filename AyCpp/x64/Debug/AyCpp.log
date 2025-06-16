@@ -1,2 +1,7 @@
-﻿  LINK : C:\OneDrive\바탕 화면\Alex\x64\Debug\AyCpp.exe을(를) 찾을 수 없거나 마지막 증분 링크에 의해 빌드되지 않았습니다. 전체 링크를 수행하고 있습니다.
-  AyCpp.vcxproj -> C:\OneDrive\바탕 화면\Alex\x64\Debug\AyCpp.exe
+﻿  Vector2D.cpp
+C:\Users\Administrator\Desktop\Alex\AyCpp\Vector2D.cpp(18,1): warning C4172: 지역 변수 또는 임시 의 주소를 반환하는 중
+C:\Users\Administrator\Desktop\Alex\AyCpp\Vector2D.cpp(23,1): warning C4172: 지역 변수 또는 임시 의 주소를 반환하는 중
+C:\Users\Administrator\Desktop\Alex\AyCpp\Vector2D.cpp(33,1): warning C4172: 지역 변수 또는 임시 의 주소를 반환하는 중
+C:\Users\Administrator\Desktop\Alex\AyCpp\Vector2D.cpp(50,1): warning C4172: 지역 변수 또는 임시 : temp의 주소를 반환하는 중
+C:\Users\Administrator\Desktop\Alex\AyCpp\Vector2D.cpp(28,1): warning C4172: 지역 변수 또는 임시 의 주소를 반환하는 중
+  AyCpp.vcxproj -> C:\Users\Administrator\Desktop\Alex\x64\Debug\AyCpp.exe

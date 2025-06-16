@@ -40,29 +40,24 @@ int main()
 		switch (Con(num))
 		{
 		case potion:
-			pCon = new Potion;
-			pCon->Use();
-			delete pCon;
+			pCon = new Potion;			
 			break;
 		case lantern:
-			pCon = new Lantern;
-			pCon->Use();
-			delete pCon;
+			pCon = new Lantern;			
 			break;
 		case antidote:
-			pCon = new Antidote;
-			pCon->Use();
-			delete pCon;
+			pCon = new Antidote;			
 			break;
 		case bandage:
-			pCon = new Bandage;
-			pCon->Use();
-			delete pCon;
+			pCon = new Bandage;			
 			break;
 		default:
 			cout << "잘못입력했습니다." << endl;
 			break;
 		}
+
+		pCon->Use(); 
+		delete pCon; 
 	}*/
 #pragma endregion 
 #pragma endregion 

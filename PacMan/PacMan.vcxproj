@@ -124,6 +124,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Pacman-Copy.cpp" />
     <ClCompile Include="Pacman-master.cpp" />
     <ClCompile Include="PM06130439.cpp" />
     <ClCompile Include="PM061511.cpp" />

@@ -260,7 +260,7 @@ private:
         }
     }
 
-    void RenderUx()
+    void RenderUx() 
     {
         COORD scorePosition = { 0, ROW_MAX + 1 };
         SetConsoleCursorPosition(hConsole, scorePosition);
