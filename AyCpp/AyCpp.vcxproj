@@ -124,16 +124,6 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AyCpp.cpp" />
-    <ClCompile Include="Brush.cpp" />
-    <ClCompile Include="Paint.cpp" />
-    <ClCompile Include="Pencil.cpp" />
-    <ClCompile Include="Vector2D.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="Brush.h" />
-    <ClInclude Include="Paint.h" />
-    <ClInclude Include="Pencil.h" />
-    <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
