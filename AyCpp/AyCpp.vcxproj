@@ -124,6 +124,12 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="AyCpp.cpp" />
+    <ClCompile Include="Packet.cpp" />
+    <ClCompile Include="Resource.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Packet.h" />
+    <ClInclude Include="Resource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

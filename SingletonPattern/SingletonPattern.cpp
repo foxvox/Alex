@@ -50,10 +50,10 @@ public:
 // 정적 멤버 변수 초기화
 Singleton* Singleton::instance = nullptr;
 
-int main()
-{
-    Singleton* singleton = Singleton::GetInstance();
-    singleton->ShowMessage();
-
-    return 0;
-}
+//int main()
+//{
+//    Singleton* singleton = Singleton::GetInstance();
+//    singleton->ShowMessage();
+//
+//    return 0;
+//}

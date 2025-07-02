@@ -1,4 +1,6 @@
-﻿#include <iostream> 
+﻿/* 
+
+#include <iostream> 
 #include <iomanip> 
 #include "Consumable.h" 
 #include "Potion.h" 
@@ -59,6 +61,8 @@ int main()
 		pCon->Use(); 
 		delete pCon; 
 	}*/
-#pragma endregion 
-#pragma endregion 
-}
+
+
+//#pragma endregion 
+//#pragma endregion 
+//} 

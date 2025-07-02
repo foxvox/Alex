@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\Administrator\\Desktop\\Alex\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C740AB81-B7B8-4F71-BAE9-226B820D81A2}|Class8th (STL)\\Class8th (STL).vcxproj|C:\\Users\\Administrator\\Desktop\\Alex\\Class8th (STL)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{C740AB81-B7B8-4F71-BAE9-226B820D81A2}|Class8th (STL)\\Class8th (STL).vcxproj|solutionrelative:Class8th (STL)\\Source.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{ACC333D5-856C-4AAA-A963-C86DD4AFD32C}|AyCpp\\AyCpp.vcxproj|C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\AyCpp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{ACC333D5-856C-4AAA-A963-C86DD4AFD32C}|AyCpp\\AyCpp.vcxproj|solutionrelative:AyCpp\\AyCpp.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44364610-7245-44A0-8B03-EA32CF49EC23}|SmartPointer\\SmartPointer.vcxproj|C:\\Users\\Administrator\\Desktop\\Alex\\SmartPointer\\\uC21C\uD658\uCC38\uC870\uBB38\uC81C\uD574\uACB0.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{44364610-7245-44A0-8B03-EA32CF49EC23}|SmartPointer\\SmartPointer.vcxproj|solutionrelative:SmartPointer\\\uC21C\uD658\uCC38\uC870\uBB38\uC81C\uD574\uACB0.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{ACC333D5-856C-4AAA-A963-C86DD4AFD32C}|AyCpp\\AyCpp.vcxproj|C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\Resource.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ACC333D5-856C-4AAA-A963-C86DD4AFD32C}|AyCpp\\AyCpp.vcxproj|solutionrelative:AyCpp\\Resource.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44364610-7245-44A0-8B03-EA32CF49EC23}|SmartPointer\\SmartPointer.vcxproj|C:\\Users\\Administrator\\Desktop\\Alex\\SmartPointer\\\uC21C\uD658\uCC38\uC870\uBB38\uC81C\uBC1C\uC0DD.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{44364610-7245-44A0-8B03-EA32CF49EC23}|SmartPointer\\SmartPointer.vcxproj|solutionrelative:SmartPointer\\\uC21C\uD658\uCC38\uC870\uBB38\uC81C\uBC1C\uC0DD.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{ACC333D5-856C-4AAA-A963-C86DD4AFD32C}|AyCpp\\AyCpp.vcxproj|C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\Resource.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ACC333D5-856C-4AAA-A963-C86DD4AFD32C}|AyCpp\\AyCpp.vcxproj|solutionrelative:AyCpp\\Resource.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{44364610-7245-44A0-8B03-EA32CF49EC23}|SmartPointer\\SmartPointer.vcxproj|C:\\Users\\Administrator\\Desktop\\Alex\\SmartPointer\\SmartPointer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
-      "RelativeMoniker": "D:0:0:{44364610-7245-44A0-8B03-EA32CF49EC23}|SmartPointer\\SmartPointer.vcxproj|solutionrelative:SmartPointer\\SmartPointer.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+      "AbsoluteMoniker": "D:0:0:{ACC333D5-856C-4AAA-A963-C86DD4AFD32C}|AyCpp\\AyCpp.vcxproj|C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\Packet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ACC333D5-856C-4AAA-A963-C86DD4AFD32C}|AyCpp\\AyCpp.vcxproj|solutionrelative:AyCpp\\Packet.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{ACC333D5-856C-4AAA-A963-C86DD4AFD32C}|AyCpp\\AyCpp.vcxproj|C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\Packet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
+      "RelativeMoniker": "D:0:0:{ACC333D5-856C-4AAA-A963-C86DD4AFD32C}|AyCpp\\AyCpp.vcxproj|solutionrelative:AyCpp\\Packet.cpp||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +30,71 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "Source.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Alex\\Class8th (STL)\\Source.cpp",
-              "RelativeDocumentMoniker": "Class8th (STL)\\Source.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Alex\\Class8th (STL)\\Source.cpp",
-              "RelativeToolTip": "Class8th (STL)\\Source.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAGEAAAABAAAAAAAAAA==",
+              "DocumentIndex": 1,
+              "Title": "Resource.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\Resource.cpp",
+              "RelativeDocumentMoniker": "AyCpp\\Resource.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\Resource.cpp",
+              "RelativeToolTip": "AyCpp\\Resource.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAACAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-18T06:45:49.046Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "SmartPointer.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Alex\\SmartPointer\\SmartPointer.cpp",
-              "RelativeDocumentMoniker": "SmartPointer\\SmartPointer.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Alex\\SmartPointer\\SmartPointer.cpp",
-              "RelativeToolTip": "SmartPointer\\SmartPointer.cpp",
-              "ViewState": "AgIAABIAAAAAAAAAAAAAACsAAAACAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-18T05:50:46.543Z",
+              "WhenOpened": "2025-07-02T06:04:01.54Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "\uC21C\uD658\uCC38\uC870\uBB38\uC81C\uD574\uACB0.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Alex\\SmartPointer\\\uC21C\uD658\uCC38\uC870\uBB38\uC81C\uD574\uACB0.cpp",
-              "RelativeDocumentMoniker": "SmartPointer\\\uC21C\uD658\uCC38\uC870\uBB38\uC81C\uD574\uACB0.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Alex\\SmartPointer\\\uC21C\uD658\uCC38\uC870\uBB38\uC81C\uD574\uACB0.cpp",
-              "RelativeToolTip": "SmartPointer\\\uC21C\uD658\uCC38\uC870\uBB38\uC81C\uD574\uACB0.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
+              "Title": "Resource.h",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\Resource.h",
+              "RelativeDocumentMoniker": "AyCpp\\Resource.h",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\Resource.h",
+              "RelativeToolTip": "AyCpp\\Resource.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAApAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T06:03:55.753Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Packet.cpp",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\Packet.cpp",
+              "RelativeDocumentMoniker": "AyCpp\\Packet.cpp",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\Packet.cpp",
+              "RelativeToolTip": "AyCpp\\Packet.cpp",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-18T05:49:45.734Z",
+              "WhenOpened": "2025-07-02T05:06:48.24Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "\uC21C\uD658\uCC38\uC870\uBB38\uC81C\uBC1C\uC0DD.cpp",
-              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Alex\\SmartPointer\\\uC21C\uD658\uCC38\uC870\uBB38\uC81C\uBC1C\uC0DD.cpp",
-              "RelativeDocumentMoniker": "SmartPointer\\\uC21C\uD658\uCC38\uC870\uBB38\uC81C\uBC1C\uC0DD.cpp",
-              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Alex\\SmartPointer\\\uC21C\uD658\uCC38\uC870\uBB38\uC81C\uBC1C\uC0DD.cpp",
-              "RelativeToolTip": "SmartPointer\\\uC21C\uD658\uCC38\uC870\uBB38\uC81C\uBC1C\uC0DD.cpp",
-              "ViewState": "AgIAAAYAAAAAAAAAAAAAAB8AAAATAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-18T05:49:02.916Z",
+              "Title": "Packet.h",
+              "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\Packet.h",
+              "RelativeDocumentMoniker": "AyCpp\\Packet.h",
+              "ToolTip": "C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\Packet.h",
+              "RelativeToolTip": "AyCpp\\Packet.h",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2025-07-02T05:06:29.375Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 0,
               "Title": "AyCpp.cpp",
               "DocumentMoniker": "C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\AyCpp.cpp",
               "RelativeDocumentMoniker": "AyCpp\\AyCpp.cpp",
               "ToolTip": "C:\\Users\\Administrator\\Desktop\\Alex\\AyCpp\\AyCpp.cpp",
               "RelativeToolTip": "AyCpp\\AyCpp.cpp",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACAAAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000677|",
-              "WhenOpened": "2025-06-16T11:44:56.749Z",
+              "WhenOpened": "2025-07-02T05:23:09.434Z",
               "EditorCaption": ""
             }
           ]

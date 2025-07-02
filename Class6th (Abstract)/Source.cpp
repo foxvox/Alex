@@ -1,11 +1,13 @@
-﻿#include <iostream> 
-#include "Paint.h" 
-#include "Brush.h" 
-#include "Pencil.h" 
-#include "Vector2D.h" 
+﻿//#include <iostream> 
+//#include "Paint.h" 
+//#include "Brush.h" 
+//#include "Pencil.h" 
+//#include "Vector2D.h" 
+
+/*
 
 using namespace std;
-
+/*
 int main()
 {
 #pragma region 추상클래스 
@@ -21,7 +23,9 @@ int main()
 	pencil->Draw();
 
 	delete brush;
-	delete pencil; */
+	delete pencil; */ 
+
+/*
 #pragma endregion 
 #pragma region 연산자오버로딩 
 	Vector2D vec1(2, 3), vec2(5, 6), vec3(0, 0);
@@ -44,3 +48,4 @@ int main()
 #pragma endregion 	
 }
 
+*/ 

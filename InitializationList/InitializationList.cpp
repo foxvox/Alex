@@ -18,19 +18,19 @@ const 멤버 변수와 참조 변수(&)는 초기화 리스트를 통해서만 �
 ✔ 포함된 클래스 객체를 올바르게 초기화하는 데도 유용함.
 */
 
-class Example {
-private:
-    const int a;  // const 변수
-    int& ref;     // 참조 변수
-public:
-    // 멤버 초기화 리스트를 사용한 생성자
-    Example(int x, int& y) : a(x), ref(y) {
-        cout << "초기화 완료! a: " << a << ", ref: " << ref << endl;
-    }
-};
-
-int main() {
-    int num = 20;
-    Example obj(10, num);
-    return 0;
-}
+//class Example {
+//private:
+//    const int a;  // const 변수
+//    int& ref;     // 참조 변수
+//public:
+//    // 멤버 초기화 리스트를 사용한 생성자
+//    Example(int x, int& y) : a(x), ref(y) {
+//        cout << "초기화 완료! a: " << a << ", ref: " << ref << endl;
+//    }
+//};
+//
+//int main() {
+//    int num = 20;
+//    Example obj(10, num);
+//    return 0;
+//}

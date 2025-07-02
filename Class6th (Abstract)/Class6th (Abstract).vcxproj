@@ -127,7 +127,6 @@
     <ClCompile Include="Paint.cpp" />
     <ClCompile Include="Pencil.cpp" />
     <ClCompile Include="Source.cpp" />
-    <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Brush.h" />

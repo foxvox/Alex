@@ -1,4 +1,5 @@
-﻿#include <iostream> 
+﻿/* 
+#include <iostream> 
 #include <cassert> 
 using namespace std;
 
@@ -68,6 +69,7 @@ static void Position(int x = 10, int y = 20, int z = 30)
 	cout << "x: " << x << '\t' << "y: " << y << '\t' << "z: " << z << endl;
 }
 
+/* 
 int main()
 {
 #pragma region 생성자 
@@ -114,7 +116,10 @@ int main()
 	/*Position();
 	Position(1, 2, 3);
 	Position(7000, 8000); */
-#pragma endregion
+#pragma endregion 
+
+
+/* 
 
 }
 
@@ -133,3 +138,5 @@ void Unit::Update()
 void Unit::Render()
 {
 }
+
+*/
